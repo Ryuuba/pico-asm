@@ -1,13 +1,13 @@
 # Target labels
  ELF2UF2Build
 # Source files and their labels
-/home/adangmedrano-chavez/Code/pico-asm/build/arithmetic-logic/CMakeFiles/ELF2UF2Build
-/home/adangmedrano-chavez/Code/pico-asm/build/arithmetic-logic/CMakeFiles/ELF2UF2Build.rule
-/home/adangmedrano-chavez/Code/pico-asm/build/arithmetic-logic/CMakeFiles/ELF2UF2Build-complete.rule
-/home/adangmedrano-chavez/Code/pico-asm/build/arithmetic-logic/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build.rule
-/home/adangmedrano-chavez/Code/pico-asm/build/arithmetic-logic/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure.rule
-/home/adangmedrano-chavez/Code/pico-asm/build/arithmetic-logic/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download.rule
-/home/adangmedrano-chavez/Code/pico-asm/build/arithmetic-logic/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install.rule
-/home/adangmedrano-chavez/Code/pico-asm/build/arithmetic-logic/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir.rule
-/home/adangmedrano-chavez/Code/pico-asm/build/arithmetic-logic/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch.rule
-/home/adangmedrano-chavez/Code/pico-asm/build/arithmetic-logic/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update.rule
+/home/geo/pico/pico-asm/build/arithmetic-logic/CMakeFiles/ELF2UF2Build
+/home/geo/pico/pico-asm/build/arithmetic-logic/CMakeFiles/ELF2UF2Build.rule
+/home/geo/pico/pico-asm/build/arithmetic-logic/CMakeFiles/ELF2UF2Build-complete.rule
+/home/geo/pico/pico-asm/build/arithmetic-logic/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build.rule
+/home/geo/pico/pico-asm/build/arithmetic-logic/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure.rule
+/home/geo/pico/pico-asm/build/arithmetic-logic/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download.rule
+/home/geo/pico/pico-asm/build/arithmetic-logic/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install.rule
+/home/geo/pico/pico-asm/build/arithmetic-logic/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir.rule
+/home/geo/pico/pico-asm/build/arithmetic-logic/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch.rule
+/home/geo/pico/pico-asm/build/arithmetic-logic/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update.rule
