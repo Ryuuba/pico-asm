@@ -1,4 +1,4 @@
-# Install script for directory: /home/adangmedrano-chavez/Code/pico-sdk/src/common/pico_bit_ops
+# Install script for directory: /home/geo/pico/pico-sdk/src/common/pico_bit_ops
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,4 +1,4 @@
-// Padded and checksummed version of: /home/adangmedrano-chavez/Code/pico-asm/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
+// Padded and checksummed version of: /home/geo/pico/pico-asm/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
 
 .cpu cortex-m0plus
 .thumb

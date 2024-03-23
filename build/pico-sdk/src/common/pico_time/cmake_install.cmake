@@ -1,4 +1,4 @@
-# Install script for directory: /home/adangmedrano-chavez/Code/pico-sdk/src/common/pico_time
+# Install script for directory: /home/geo/pico/pico-sdk/src/common/pico_time
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

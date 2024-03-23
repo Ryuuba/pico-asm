@@ -1,4 +1,4 @@
-# Install script for directory: /home/adangmedrano-chavez/Code/pico-asm/arithmetic-logic
+# Install script for directory: /home/geo/pico/pico-asm/arithmetic-logic
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

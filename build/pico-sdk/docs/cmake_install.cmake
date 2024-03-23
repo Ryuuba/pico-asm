@@ -1,4 +1,4 @@
-# Install script for directory: /home/adangmedrano-chavez/Code/pico-sdk/docs
+# Install script for directory: /home/geo/pico/pico-sdk/docs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
