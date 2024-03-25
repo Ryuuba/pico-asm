@@ -8,50 +8,58 @@
 	.thumb_func
 	.type	main, %function
 main:
-    # Prologue
+    @ Prologue
     push    {r7, lr}
     sub	    sp, sp, #16
 	add	    r7, sp, #0
 init:
     bl stdio_init_all           // Jump to SDK STDIO initialisation routine
-    movs r0, #0x80              // Set the delay period
-    lsls r0, #4
-    bl sleep_ms                 // Delay to allow the STDIO-over-USB to ready
-    # a = 0
+    @ a = 0
     movs    r3, #0
     str     r3, [r7, #12]
-    # b = 1
+    @ b = 1
     movs    r3, #1
     str     r3, [r7, #8]
-    # i = 0
+    @ i = 0
     movs    r3, #0
     str     r3, [r7]
 loop:
-    # temp = a
+    @ temp = a
     ldr     r3, [r7, #12]
     str     r3, [r7, #4]
-    # a = b
+    @ a = b
     ldr     r3, [r7, #8]
     str     r3, [r7, #12]
-    # b = temp + b;
+    @ b = temp + b;
     ldr     r3, [r7, #4]
     ldr     r4, [r7, #8]
     adds    r3, r3, r4
     str     r3, [r7, #8]
-    # i++
+    @ i++
     ldr     r3, [r7]
     adds    r3, r3, #1
     str     r3, [r7]
-    # printf fibonacci
+    @ printf fibonacci
     ldr     r2, [r7, #12]
     ldr     r1, [r7]
-    ldr     r0, =STR
+    ldr     r0, =STR1
     bl      printf
-    # delay
+    @ If i == 47
+    ldr     r3, [r7]
+    cmp     r3, #47
+    bne     .L1
+    ldr     r0, =STR2
+    bl      printf
+    b       .EXIT
+.L1:
+    @ delay
     ldr     r0, DELAY_TIME_MS
     bl      sleep_ms
     b       loop
+.EXIT:
+    nop
 
 .align 4
-DELAY_TIME_MS:  .word           5000
-STR:            .ascii	"Fib(%i)=%i\012\000"
+DELAY_TIME_MS:  .word       1000
+STR1:           .ascii      "Fib(%u)=%u\012\000"
+STR2:           .ascii      "Program stops\012\000"
