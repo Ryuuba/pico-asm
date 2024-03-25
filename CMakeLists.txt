@@ -13,8 +13,5 @@ pico_sdk_init()
 
 
 # Add blink example
-add_subdirectory(arithmetic-logic)
-# add_subdirectory(conditional)
-# add_subdirectory(loop)
-# add_subdirectory(subroutine)
-
+add_subdirectory(blink)
+add_subdirectory(Fibonacci)
