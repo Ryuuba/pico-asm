@@ -1,38 +1,34 @@
-	.cpu cortex-m0
-	.arch armv6s-m
     .text
 	.align	1
 	.global	main
 	.syntax unified
-	.code	16
 	.thumb_func
-	.type	main, %function
 main:
     @ Prologue
     push    {r7, lr}
-    sub	    sp, sp, #8
-	add	    r7, sp, #0
+    sub	    sp, sp, 8
+	add	    r7, sp, 0
 init:
-    bl stdio_init_all           // Jump to SDK STDIO initialisation routine
+    bl stdio_init_all@ Backs r7 and lr up
     @ i = 0
-    movs    r3, #0
-    str     r3, [r7, #4]
+    movs    r3, 0
+    str     r3, [r7, 4]
 while_loop:
     @ fib_num = fibonacci_generator();
     bl      fibonacci_gen
     str     r0, [r7]
     @ printf fibonacci
     ldr     r2, [r7]
-    ldr     r1, [r7, #4]
+    ldr     r1, [r7, 4]
     ldr     r0, =STR1
     bl      printf
     @ i++
-    ldr     r3, [r7, #4]
-    adds    r3, #1
-    str     r3, [r7, #4]
+    ldr     r3, [r7, 4]
+    adds    r3, 1
+    str     r3, [r7, 4]
     @ If i == 47
-    ldr     r3, [r7, #4]
-    cmp     r3, #47
+    ldr     r3, [r7, 4]
+    cmp     r3, 47
     bne     .L1
     ldr     r0, =STR2
     bl      printf
