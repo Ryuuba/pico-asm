@@ -1,6 +1,6 @@
 add_executable(Fibonacci
-    Fibonacci.c
-    Fibonacci_gen.c
+    Fibonacci.S
+    Fibonacci_gen.S
     ../common/sdk_inlines.c
 )
 
