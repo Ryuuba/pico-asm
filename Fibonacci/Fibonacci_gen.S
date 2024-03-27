@@ -33,9 +33,6 @@ fibonacci_gen:
     pop     {r7}
     bx      lr
 
-.align 4
-STR:           .ascii      "var=%u\012\000"
-
 .data
 	.align	4
 a_var:

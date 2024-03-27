@@ -15,3 +15,4 @@ pico_sdk_init()
 # Add blink example
 add_subdirectory(blink)
 add_subdirectory(Fibonacci)
+add_subdirectory(hello_7segment)
