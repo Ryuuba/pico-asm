@@ -5,6 +5,7 @@
  */
 
 #include <stdio.h>
+#include <stdint.h>
 #include "pico/stdlib.h"
 #include "hardware/gpio.h"
 
@@ -28,8 +29,12 @@
 #define FIRST_GPIO 2
 #define BUTTON_GPIO (FIRST_GPIO+7)
 
+
+
+/// \tag::hello_gpio[]
+int main() {
 // This array converts a number 0-9 to a bit pattern to send to the GPIOs
-int bits[10] = {
+uint32_t bits[10] = {
         0x3f,  // 0
         0x06,  // 1
         0x5b,  // 2
@@ -41,9 +46,6 @@ int bits[10] = {
         0x7f,  // 8
         0x67   // 9
 };
-
-/// \tag::hello_gpio[]
-int main() {
     stdio_init_all();
     printf("Hello, 7segment - press button to count down!\n");
 
@@ -85,7 +87,7 @@ int main() {
         // Set all our GPIOs in one go!
         // If something else is using GPIO, we might want to use gpio_put_masked()
         gpio_set_mask(mask);
-        sleep_ms(250);
+        sleep_ms(5000);
         gpio_clr_mask(mask);
     }
 }
