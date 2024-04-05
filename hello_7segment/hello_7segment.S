@@ -109,7 +109,8 @@ L5:
     ldr     r0, [r7, 48]
     bl      gpio_clr_mask_wrapper
     b       L7
-
+    @ No epilogue needed
+    pop     {r7, pc}
 
 .align 4
 DELAY:  .word 500
