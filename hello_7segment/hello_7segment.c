@@ -87,7 +87,7 @@ uint32_t bits[10] = {
         // Set all our GPIOs in one go!
         // If something else is using GPIO, we might want to use gpio_put_masked()
         gpio_set_mask(mask);
-        sleep_ms(5000);
+        sleep_ms(500);
         gpio_clr_mask(mask);
     }
 }
