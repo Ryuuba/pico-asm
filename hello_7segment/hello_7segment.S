@@ -1,5 +1,4 @@
 @ Directivas mínimas
-.arch armv6-m
 .text @ Guardar las instrucciones en la sección de código
 .align 1 @ Indica que el código ocupa direcciones de 2^1 Byte
 .global main @ Permite que el procedimiento pueda llamarse
@@ -22,14 +21,11 @@ main:
     stmia   r0!, {r2, r3, r4, r5, r6}
     @ stdio_init_all()
     bl      stdio_init_all
-    @ printf("Hello, 7segment - press button to count down!\n")
-    ldr     r0, =STR0
-    bl      printf
     @ for loop
-L2:
     movs    r3, FIRST_GPIO  @ gpio = FIRST_GPIO
     str     r3, [r7, 40]
     b       L1
+L2:
     ldr     r0, [r7, 40]    @ gpio_init(gpio)
     bl      gpio_init
     movs    r1, 1           @ gpio_set_dir
@@ -93,6 +89,9 @@ L6:
     adds    r3, -1
     str     r3, [r7, 44]
 L5:
+    @printf(val)
+    ldr     r0, =STR1
+    bl      printf
     @ mask = bits[val] << FIRST_GPIO
     mov     r3, r7          @ computes base address
     ldr     r4, [r7, 44]    @ gets index value
@@ -115,6 +114,7 @@ L5:
 .align 4
 DELAY:  .word 500
 STR0:   .ascii  "Hello, 7segment - press button to count down!\012\000"
+STR1:   .ascii  "val = %u\012\000"
 
 .section .rodata
     .align 2
