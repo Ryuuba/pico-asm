@@ -5,7 +5,7 @@
 .syntax unified @ Usa la sintaxis nueva de ARM thumb
 .thumb_func @ Indica que las instrucciones de la función son 2 B
 .equ FIRST_GPIO, 2
-.equ BUTTON_GPIO, FIRST_GPIO+7
+.equ BUTTON_GPIO, 9
 
 main:
     @ prologue
@@ -42,7 +42,7 @@ L1:
     movs    r0, BUTTON_GPIO
     bl      gpio_init
     @ gpio_set_dir
-    movs    r1, 1
+    movs    r1, 0
     movs    r0, BUTTON_GPIO
     bl      gpio_set_dir_wrapper
     @ gpio_pull_up
@@ -113,6 +113,7 @@ L5:
     pop     {r7, pc}
 
 .align 4
+
 DELAY:  .word 500
 STR0:   .ascii  "Hello, 7segment - press button to count down!\012\000"
 STR1:   .ascii  "val = %u\012\000"
