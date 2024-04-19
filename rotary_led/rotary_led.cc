@@ -2,6 +2,7 @@
 #include "hardware/adc.h"
 #include <stdio.h>
 
+inline uint32_t const RotaryLed::delay = 50;
 
 void RotaryLed::init()
 {
@@ -26,10 +27,14 @@ void RotaryLed::turn_led_on()
 
 uint32_t RotaryLed::read_value()
 {
-    static uint8_t pin = 0;
+    auto analog_read = adc_read();
+    uint16_t pin = (analog_read > 3410) ? 5
+                 : (analog_read > 2728) ? 4
+                 : (analog_read > 2046) ? 3
+                 : (analog_read > 1364) ? 2
+                 : (analog_read > 682) ? 1
+                 : 0;
     mask = 1 << pins[pin];
-    printf("pin: %i, mask: %i\n", pins[pin], mask);
-    pin = (pin + 1)%6;
     return mask;
 }
 

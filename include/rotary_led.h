@@ -10,6 +10,8 @@ private:
     /** @brief The led to be turned on */
     uint32_t mask;
 public:
+    /** @brief The time the rotary led delays on reading the input */
+    static uint32_t const delay;
     /** @brief Constructs the rotary led from an 8-int array */
     RotaryLed(const std::array<uint32_t, 7>& _pins)
         : pins(_pins)
