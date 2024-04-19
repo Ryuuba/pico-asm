@@ -13,7 +13,7 @@ int main()
         auto val = rotaryLed.read_value();
         printf("mask: %i\n",val);
         rotaryLed.turn_led_on();
-        sleep_ms(500);
+        sleep_ms(rotaryLed.delay);
         rotaryLed.clear();
     }
     return 0;
