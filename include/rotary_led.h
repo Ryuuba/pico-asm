@@ -27,4 +27,6 @@ public:
     void init();
     /** @brief Turns a led on depending on the read analog value */
     void turn_led_on();
+    /** @brief Reads the analog value*/
+    uint32_t read_value();
 };

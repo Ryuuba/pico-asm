@@ -21,8 +21,12 @@ void RotaryLed::init()
 
 void RotaryLed::turn_led_on()
 {
-    gpio_clr_mask(mask);
+    gpio_set_mask(mask);
+}
+
+uint32_t RotaryLed::read_value()
+{
     uint8_t pin = adc_read() % 7;
     mask = 1 << pins[pin];
-    gpio_set_mask(mask);
+    return mask;
 }
