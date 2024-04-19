@@ -1,6 +1,6 @@
 #include "rotary_led.h"
 #include "hardware/adc.h"
-
+#include <stdio.h>
 
 
 void RotaryLed::init()
@@ -26,7 +26,14 @@ void RotaryLed::turn_led_on()
 
 uint32_t RotaryLed::read_value()
 {
-    uint8_t pin = adc_read() % 7;
+    static uint8_t pin = 0;
     mask = 1 << pins[pin];
+    printf("pin: %i, mask: %i\n", pins[pin], mask);
+    pin = (pin + 1)%6;
     return mask;
+}
+
+void RotaryLed::clear()
+{
+    gpio_clr_mask(mask);
 }

@@ -5,7 +5,7 @@
 
 int main()
 {
-    RotaryLed rotaryLed {PIN_A, PIN_B, PIN_C, PIN_D, PIN_E, PIN_F, PIN_G, ANALOG_PIN};
+    RotaryLed rotaryLed {PIN_A, PIN_B, PIN_C, PIN_D, PIN_E, PIN_F, ANALOG_PIN};
     stdio_init_all();
     rotaryLed.init();
     while (true)
@@ -14,6 +14,7 @@ int main()
         printf("mask: %i\n",val);
         rotaryLed.turn_led_on();
         sleep_ms(500);
+        rotaryLed.clear();
     }
     return 0;
 }
