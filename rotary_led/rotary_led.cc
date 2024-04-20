@@ -2,7 +2,7 @@
 #include "hardware/adc.h"
 #include <stdio.h>
 
-inline uint32_t const RotaryLed::delay = 50;
+uint32_t const RotaryLed::delay = 50;
 
 void RotaryLed::init()
 {
