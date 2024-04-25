@@ -1,6 +1,5 @@
 #include "rotary_led.h"
 #include "hardware/adc.h"
-#include <stdio.h>
 
 uint32_t const RotaryLed::delay = 50;
 
