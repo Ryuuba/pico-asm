@@ -1,6 +1,6 @@
 add_executable(rotary_led
-    rotary_led.cc
-    test.cc
+    crotaryled.c
+    test.c
 )
 target_include_directories(rotary_led
     PRIVATE
