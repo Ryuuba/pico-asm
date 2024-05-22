@@ -43,13 +43,13 @@ init:   bl stdio_init_all           // Jump to SDK STDIO initialisation routine
 
         movs r0, #LED_PIN           // Set the pin number
         movs r1, #GPIO_DIR_OUT      // Set the pin direction
-        bl gpio_set_direction       // Jump to SDK pin direction routine
+        bl gpio_set_dir_wrapper       // Jump to SDK pin direction routine
 
         b info                      // Jump to the CPU info readout
 
 loop:   movs r0, #LED_PIN           // Set the pin number
         movs r1, #PIN_HIGH          // Set the pin state
-        bl gpio_set_state           // Jump to SDK pin state routine
+        bl gpio_put_wrapper          // Jump to SDK pin state routine
 
         ldr r0, DELAY_TIME_MS       // Set the delay period
                                     // NOTE This form assembles as PC offset addressing,
@@ -59,7 +59,7 @@ loop:   movs r0, #LED_PIN           // Set the pin number
 
         movs r0, #LED_PIN           // Set the pin number
         movs r1, #PIN_LOW           // Set the pin state
-        bl gpio_set_state           // Jump to SDK pin state routine
+        bl gpio_put_wrapper           // Jump to SDK pin state routine
 
         ldr r0, DELAY_TIME_MS       // Set the delay period
         bl sleep_ms                 // Delay
