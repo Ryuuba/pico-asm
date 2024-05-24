@@ -6,7 +6,8 @@
 
 #include "pico/stdlib.h"
 #include "hardware/uart.h"
-#include "string.h"
+#include <string.h>
+#include <stdio.h>
 
 int main()
 {
@@ -21,6 +22,7 @@ int main()
         // waits for response world
         //TODO: Add interrupt to break the loop
         uart_read_blocking(UART_ID, buffer, 5);
-        printf(buffer, " Hola %s", buffer);
+        printf("Hola %s", buffer);
+        sleep_ms(1000);
     }
 }
